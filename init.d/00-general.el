@@ -13,30 +13,21 @@
 (global-font-lock-mode 1)
 (line-number-mode 1)
 (column-number-mode 1)
-;(and (functionp 'tool-bar-mode) (tool-bar-mode -1))
-;(and (functionp 'scroll-bar-mode) (scroll-bar-mode -1))
-;(menu-bar-mode -1)
+; disable toolbar, scrollbars and menubar
+(and (functionp 'tool-bar-mode) (tool-bar-mode -1))
+(and (functionp 'scroll-bar-mode) (scroll-bar-mode -1))
+(menu-bar-mode -1)
+
 (setq transient-mark-mode t ; show selection when marking text
-      font-lock-maximum-decoration t)
+     font-lock-maximum-decoration t)
 (mouse-avoidance-mode 'jump)
 (show-paren-mode t)
 (delete-selection-mode t) ; delete selected text when overwriting
 (global-auto-revert-mode t) ; automatically revert files to what's on disk (Dropbox integration etc.)
 
-;; EDITING
-(setq-default show-trailing-whitespace t) ; hilight trailing whitespace
-(setq longlines-show-hard-newlines t) ; displays "\" at the end of lines that wrap
-(blink-cursor-mode nil)  ; no blinking cursor
-(size-indication-mode t) ; show buffer size in statusbar
-(setq scroll-step 1) ; scroll only one line at a time, no jumping
-(setq scroll-preserve-screen-position 1) ; pgup/dn return exactly where they left off from
-
-(setq search-highlight t            ;; highlight when searching...
-  query-replace-highlight t)        ;; ...and replacing
-
 ;; Disable abbrev-mode
 (setq-default abbrev-mode nil)
-(subword-mode)
+(subword-mode t)
 ;; By default, disable flymake for all files
 (setq flymake-allowed-file-name-masks '())
 
@@ -46,19 +37,14 @@
 ;; No yes-or-no, y-or-n instead
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Disable annoying vc mode
+(setq vc-handled-backends nil)
 ;; Don't ask about symlinked version controlled files
 (setq vc-follow-symlinks t)
 
 (setq next-line-add-newlines nil)
 
-;; Disable annoying vc mode
-(setq vc-handled-backends nil)
 
-;; Smarter buffer names
-(require 'uniquify)
-(setq
-  uniquify-buffer-name-style 'post-forward
-  uniquify-separator ":")
 ; Smarter buffer switching
 (iswitchb-mode t)
 
@@ -70,9 +56,7 @@
 
 ; Fix colors in shell
 (require 'ansi-color)
-
 (require 'tramp)
-
 
 ; cleanup a buffer
 ; from: http://emacsblog.org/2007/01/17/indent-whole-buffer

@@ -1,3 +1,9 @@
 [submodule "themes/zenburn"]
 	path = themes/zenburn
 	url = git://github.com/bbatsov/zenburn-emacs.git
+[submodule "lib/yaml-mode"]
+	path = lib/yaml-mode
+	url = git://github.com/yoshiki/yaml-mode.git
+[submodule "lib/emacs-git-gutter"]
+	path = lib/emacs-git-gutter
+	url = git://github.com/syohex/emacs-git-gutter.git
