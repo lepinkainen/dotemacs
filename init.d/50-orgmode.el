@@ -1,5 +1,10 @@
-;; ORG-MODE SETUP
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
+;(global-set-key "\C-cc" 'org-capture)
+
 (setq org-default-notes-file "~/Dropbox/org/inbox.org")
 
 (setq org-directory "~/Dropbox/org/"
@@ -37,11 +42,6 @@
 (add-to-list 'org-feed-alist '("Reddit inbox"
 	 "http://www.reddit.com/message/inbox/.rss?feed=cf8e82696e1019150103ea28407f8464fc9d7baa&user=theshrike"
 	 "~/Dropbox/org/feeds.org" "Reddit Inbox"))
-
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-;(global-set-key "\C-cc" 'org-capture)
 
 ; publish to html
 (setq org-publish-project-alist
