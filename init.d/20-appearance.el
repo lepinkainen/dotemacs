@@ -1,11 +1,18 @@
 ;; THEME SETUP
-(load-file "~/.emacs-config/themes/zenburn-theme.el")
+;; Use the correct theme based on emacs version
+(if (version<= emacs-version "23.1")
+    (progn
+      (load-file "~/.emacs-config/themes/zenburn-theme.el")
+      (require 'color-theme) ; emacs-goodies-el package on ubuntu
+      (color-theme-zenburn)
+      )
+; Emacs 24 and onwards
+(progn
+  (add-to-list 'custom-theme-load-path "~/.emacs-config/themes/zenburn/")
+  (load-theme 'zenburn t)
+  )
+)
 
-(require 'color-theme) ; emacs-goodies-el package on ubuntu
-; this doesn't work for some reason
-;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-;(load-theme 'zenburn t)
-(color-theme-zenburn)
 (set-face-background 'default "black") ; black background, thank you
 (set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 100) ; use a legible font
 
