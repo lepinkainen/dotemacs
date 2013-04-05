@@ -1,7 +1,8 @@
 ;; THEME SETUP
 ;; Use the correct theme based on emacs version
-(if (version<= emacs-version "23.1")
+(if (version< emacs-version "24")
     (progn
+      (message "Old style themes, emacs < 24")
       (load-file "~/.emacs-config/themes/zenburn-theme.el")
       (require 'color-theme) ; emacs-goodies-el package on ubuntu
       (color-theme-zenburn)
