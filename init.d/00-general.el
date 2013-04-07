@@ -56,6 +56,7 @@
 
 ; Fix colors in shell
 (require 'ansi-color)
+; Tramp-mode
 (require 'tramp)
 
 ; cleanup a buffer

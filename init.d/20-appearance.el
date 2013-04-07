@@ -42,6 +42,12 @@
     (my-console-specific)
   (my-windowed-specific))
 
+;; Set frame title to abbreviated file name
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
+
 ;; EDITING
 (setq-default show-trailing-whitespace t) ; hilight trailing whitespace
 (setq longlines-show-hard-newlines t) ; displays "\" at the end of lines that wrap
