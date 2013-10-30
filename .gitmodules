@@ -10,12 +10,6 @@
 [submodule "lib/projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile
-[submodule "lib/dash.el"]
-	path = lib/dash.el
-	url = https://github.com/magnars/dash.el
-[submodule "lib/s.el"]
-	path = lib/s.el
-	url = https://github.com/magnars/s.el
 [submodule "lib/dash"]
 	path = lib/dash
 	url = https://github.com/magnars/dash.el
