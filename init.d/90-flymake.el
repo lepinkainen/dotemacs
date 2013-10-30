@@ -1,5 +1,3 @@
-(load "flymake")
-
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
