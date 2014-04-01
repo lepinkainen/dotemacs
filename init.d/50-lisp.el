@@ -1,2 +1,2 @@
-; Use sbclas lisp interpreter instead of lisp
+; Use sbcl as lisp interpreter instead of lisp
 (setq inferior-lisp-program "/usr/bin/sbcl")

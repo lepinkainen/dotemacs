@@ -1,3 +1,4 @@
+; line number
 (require 'linum)
 (setq linum-format
       (lambda (line)

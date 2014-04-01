@@ -1,5 +1,5 @@
 ;; KEYBINDINGS
-(global-set-key (kbd "C-c k") 'browse-kill-ring)
+(global-set-key (kbd "C-c k") 'browse-kill-ring) ; select stuff from kill ring
 ; A saner undo key
 (global-set-key (kbd "C-z") 'undo)
 ; goto-line

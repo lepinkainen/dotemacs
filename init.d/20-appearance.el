@@ -50,11 +50,11 @@
 
 ;; EDITING
 (setq-default show-trailing-whitespace t) ; hilight trailing whitespace
-(setq longlines-show-hard-newlines t) ; displays "\" at the end of lines that wrap
-(blink-cursor-mode -1)  ; no blinking cursor
-(size-indication-mode t) ; show buffer size in statusbar
-(setq scroll-step 1) ; scroll only one line at a time, no jumping
-(setq scroll-preserve-screen-position 1) ; pgup/dn return exactly where they left off from
+(setq longlines-show-hard-newlines t)     ; displays "\" at the end of lines that wrap
+(blink-cursor-mode -1)                    ; no blinking cursor
+(size-indication-mode t)                  ; show buffer size in statusbar
+(setq scroll-step 1)                      ; scroll only one line at a time, no jumping
+(setq scroll-preserve-screen-position 1)  ; pgup/dn return exactly where they left off from
 
-(setq search-highlight t            ;; highlight when searching...
-  query-replace-highlight t)        ;; ...and replacing
+(setq search-highlight t                  ;; highlight when searching...
+  query-replace-highlight t)              ;; ...and replacing
