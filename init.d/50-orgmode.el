@@ -2,8 +2,8 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+
 (add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
-;(global-set-key "\C-cc" 'org-capture)
 
 (setq org-default-notes-file "~/Dropbox/org/inbox.org")
 
@@ -28,6 +28,16 @@
 ; Allow refile to create parent tasks with confirmation
 (setq org-refile-allow-creating-parent-nodes (quote confirm))
 
+; Indent mode
+(setq org-startup-indented t)
+
+
+(global-set-key "\C-c\"" 'org-capture)
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Tasks")
+         "* TODO %? \n  %i\n")
+        ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
+             "* %?\n%n at %U\n  %i\n")))
 
 ; mobile setup
 (setq org-mobile-inbox-for-pull "~/Dropbox/mobile-inbox.org"
