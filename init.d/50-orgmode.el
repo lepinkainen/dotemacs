@@ -35,7 +35,11 @@
       '(("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Tasks")
          "* TODO %? \n  %i\n")
         ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
-             "* %?\n%n at %U\n  %i\n")))
+         "* %?\n%n at %U\n  %i\n")
+        ("u" "Link" plain (file+datetree "~/Dropbox/org/url-inbox.org")
+        "%i\n")
+        )
+)
 (setq org-default-notes-file "~/Dropbox/org/inbox.org")
 
 ; mobile setup
@@ -55,4 +59,4 @@
 	))
 
 ; publish files automatically every day
-(run-at-time 86400 86400 'org-publish-all)
+;(run-at-time 86400 86400 'org-publish-all)
