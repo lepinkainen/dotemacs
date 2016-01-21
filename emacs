@@ -4,10 +4,19 @@
 
 (setq default-directory "~/")
 
-(load "~/.emacs-config/use-package.el")
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(unless (package-installed-p 'bind-key)
+  (package-install 'bind-key))
 (eval-when-compile
   (require 'use-package))
 (setq use-package-always-ensure t)
+(setq use-package-verbose t)
+
+(use-package auto-compile
+  :ensure t
+  :config (auto-compile-on-load-mode))
+(setq load-prefer-newer t)
 
 ;; load init.d files
 (dolist (file (directory-files "~/.emacs-config/init.d" t ".elc?$"))
