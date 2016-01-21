@@ -1,5 +1,12 @@
+;;; 10-global-keys --- Keybinding setup
+;;; Commentary:
+;;; Keyboard setup
+
+;;; Code:
+
 ;; KEYBINDINGS
-(global-set-key (kbd "C-c k") 'browse-kill-ring) ; select stuff from kill ring
+; This is alredy used to kill buffers for server windows
+;(global-set-key (kbd "C-c k") 'browse-kill-ring) ; select stuff from kill ring
 ; A saner undo key
 (global-set-key (kbd "C-z") 'undo)
 ; goto-line
@@ -14,9 +21,10 @@
 (global-set-key (kbd "TAB") 'smart-tab)
 
 (defun smart-tab ()
-  "This smart tab is minibuffer compliant: it acts as usual in
-    the minibuffer. Else, if mark is active, indents region. Else if
-    point is at the end of a symbol, expands it. Else indents the
+  "Smart tab functionality.
+   This smart tab is minibuffer compliant: it acts as usual in
+   the minibuffer.  Else, if mark is active, indents region.  Else if
+   point is at the end of a symbol, expands it.  Else indents the
     current line."
   (interactive)
   (if (minibufferp)
@@ -26,8 +34,8 @@
         (indent-region (region-beginning)
                        (region-end))
       (if (looking-at "\\_>")
-         (hippie-expand nil)
-        (indent-for-tab-command)))))
+          (hippie-expand nil) nil)
+      (indent-for-tab-command))))
 (global-set-key (kbd "TAB") 'smart-tab)
 
 (defun smart-open-line ()
@@ -38,3 +46,5 @@ Position the cursor at its beginning, according to the current mode."
   (newline-and-indent))
 
 (global-set-key [(shift return)] 'smart-open-line)
+
+;;; 10-global-keys.el ends here

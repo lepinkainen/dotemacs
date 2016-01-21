@@ -1,4 +1,7 @@
-;; Use the correct theme based on emacs version
+;;; recentf --- Recentf setup
+;;; Commentary:
+;;; Code:
+
 (if (version< emacs-version "24")
     (progn
       (message "Recentf disabled, emacs < 24")
@@ -20,3 +23,5 @@
       (find-file file))))
 
 (global-set-key (kbd "C-c C-f")  'recentf-ido-find-file)
+
+;;; 40-recentf.el ends here

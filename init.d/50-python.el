@@ -1,4 +1,9 @@
-; Indent python by 4 spaces
+;;; 50-python --- Python settings
+;;; Commentary:
+
+;;; Code:
+
+;; Indent python by 4 spaces
 (setq py-indent-offset 4)
 
 (add-hook 'python-mode-hook
@@ -10,3 +15,8 @@
       ;; (define-key python-mode-map (kbd "C-c C-u") 'uncomment-region)
       (subword-mode)
       (which-function-mode)))
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 ; optional
+
+;;; 50-python.el ends here

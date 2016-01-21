@@ -1,4 +1,7 @@
-; Simpler modeline
+;;; 50-modeline --- Simpler modeline
+;;; Commentary:
+;;; Code:
+
 (setq-default mode-line-format
       (list "["
             'mode-line-client
@@ -24,3 +27,5 @@
             "-%-"
             )
 )
+
+;;; 50-modeline.el ends here

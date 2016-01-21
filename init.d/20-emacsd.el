@@ -1,3 +1,7 @@
+;;; 20-emacsd --- Emacs daemon mode
+;;; Commentary:
+;;; Code:
+
 ;; for emacsd
 ; Use C-x k for server edits
 (add-hook 'server-switch-hook
@@ -9,3 +13,6 @@
 ; Don't ask about killing buffers
 ; http://shreevatsa.wordpress.com/2007/01/06/using-emacsclient/
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+
+;;; 20-emacsd.el ends here
+

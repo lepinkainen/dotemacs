@@ -1,6 +1,10 @@
-;; All libraries
+;;; general --- Generic setup
+;;; Commentary:
+;;; Generic setup
+
+;;; Code:
 (add-to-list 'load-path "~/.emacs-config/lib/")
-;(add-to-list 'custom-theme-load-path "~/.emacs-config/themes/")
+(add-to-list 'custom-theme-load-path "~/.emacs-config/themes/")
 
 ;; Preferences
 (setq inhibit-startup-message 1)
@@ -13,13 +17,13 @@
 (global-font-lock-mode 1)
 (line-number-mode 1)
 (column-number-mode 1)
-; disable toolbar, scrollbars and menubar
+;; disable toolbar, scrollbars and menubar
 (and (functionp 'tool-bar-mode) (tool-bar-mode -1))
 (and (functionp 'scroll-bar-mode) (scroll-bar-mode -1))
 (menu-bar-mode -1)
 
 (setq transient-mark-mode t ; show selection when marking text
-     font-lock-maximum-decoration t)
+      font-lock-maximum-decoration t)
 (mouse-avoidance-mode 'jump)
 (show-paren-mode t)
 (delete-selection-mode t) ; delete selected text when overwriting
@@ -28,8 +32,6 @@
 ;; Disable abbrev-mode
 (setq-default abbrev-mode nil)
 (subword-mode t)
-;; By default, disable flymake for all files
-(setq flymake-allowed-file-name-masks '())
 
 ;; blinky blinky
 (blink-cursor-mode t)
@@ -44,26 +46,24 @@
 
 (setq next-line-add-newlines nil)
 
-
-; Smarter buffer switching
-(iswitchb-mode t)
-
-; completions everywhere
+;; completions everywhere
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 
-; Fix colors in shell
+;; Fix colors in shell
 (require 'ansi-color)
-; Tramp-mode
+;; Tramp-mode
 (require 'tramp)
 
-; cleanup a buffer
-; from: http://emacsblog.org/2007/01/17/indent-whole-buffer
+;; cleanup a buffer
+;; from: http://emacsblog.org/2007/01/17/indent-whole-buffer
 (defun iwb ()
-  "indent whole buffer"
+  "Indent whole buffer."
   (interactive)
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
+
+;;; 00-general.el ends here
