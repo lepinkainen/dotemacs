@@ -4,6 +4,14 @@
 
 (setq default-directory "~/")
 
+;; Setup package with modern repos
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
+;; install use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 (unless (package-installed-p 'bind-key)
@@ -13,6 +21,7 @@
 (setq use-package-always-ensure t)
 (setq use-package-verbose t)
 
+;; automatically compile all packages
 (use-package auto-compile
   :ensure t
   :config (auto-compile-on-load-mode))
@@ -24,9 +33,6 @@
 
 (when (file-exists-p "~/.emacs-site.el")
   (load "~/.emacs-site.el"))
-
-
-
 
 ;; Load host-specific .el setup if it exists
 (let ((host-specific-files (concat "~/.emacs-config/" system-name ".el")))
