@@ -3,6 +3,6 @@
 ;;; Code:
 
 (use-package flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(global-flycheck-mode)
 
 ;;; 52-flycheck.el ends here
