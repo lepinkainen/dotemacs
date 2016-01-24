@@ -6,10 +6,11 @@
 
 ;; Setup package with modern repos
 (require 'package)
+(package-initialize)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/")
+             '("marmalade" . "http://marmalade-repo.org/packages/")
+)
 
 ;; install use-package
 (unless (package-installed-p 'use-package)
